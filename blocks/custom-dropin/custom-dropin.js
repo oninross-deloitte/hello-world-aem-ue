@@ -62,6 +62,7 @@ export default function decorate(block) {
       </div>`;
   block.appendChild(element3);
 
+  // * Modal
   const element4 = document.createElement('dialog');
   element4.className = 'modal';
   element4.innerHTML = `<div class="modal__content">
