@@ -790,5 +790,20 @@
         "readOnly": true
       }
     ]
+  },
+  {
+    "id": "custom-dropin",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "help-text",
+        "label": "Help Text"
+      }
+    ]
   }
 ]
