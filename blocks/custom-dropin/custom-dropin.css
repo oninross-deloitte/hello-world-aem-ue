@@ -1,0 +1,237 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-dropin {
+    margin: 12px auto;
+}
+
+/* Header */
+.address-book__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.address-book__title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.address-book__add-btn {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #333;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.address-book__add-btn:hover {
+    background-color: #555;
+}
+
+/* Search */
+.search {
+}
+
+.search span {
+    font-size: 12px;
+    color: #999;
+}
+
+.search__input-wrapper {
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 400px;
+}
+
+.search__input {
+    width: 100%;
+    padding: 12px 16px;
+    padding-right: 48px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.search__input:hover {
+    border: 2px solid #444;
+}
+
+.search__input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.search__btn {
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    margin: auto;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #666;
+}
+
+.search__icon {
+    display: block;
+}
+
+/* Table Container */
+.table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+/* Selection Bar */
+.selection-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f1f3f4;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.selection-bar__info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.selection-bar__checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.selection-bar__text {
+    font-size: 14px;
+    color: #666;
+}
+
+.selection-bar__delete-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.selection-bar__delete-btn:hover {
+    color: #333;
+}
+
+/* Contacts Table */
+.contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.contacts-table__head {
+    background-color: #f8f9fa;
+}
+
+.contacts-table__row--header {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.contacts-table__header {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contacts-table__row {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+.contacts-table__row:hover {
+    background-color: #f8f9fa;
+}
+
+.contacts-table__row--selected {
+    background-color: #f0f8ff;
+}
+
+.contacts-table__cell {
+    padding: 16px;
+    font-size: 14px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.contacts-table__cell--name {
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.contacts-table__cell--menu-active {
+    position: relative;
+}
+
+.contacts-table__checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.contacts-table__menu-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #666;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.contacts-table__menu-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.contacts-table__menu-icon {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .address-book {
+        padding: 16px;
+    }
+
+    .address-book__header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .contacts-table {
+        font-size: 12px;
+    }
+
+    .contacts-table__cell {
+        padding: 12px 8px;
+    }
+}
