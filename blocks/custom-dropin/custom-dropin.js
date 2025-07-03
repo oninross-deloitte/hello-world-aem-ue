@@ -130,6 +130,55 @@ export default function decorate(block) {
     element4.close();
   });
 
+  async function getData() {
+    const url =
+      'https://publish-p9606-e71941.adobeaemcloud.com/graphql/execute.json/fubar-aem-ue/addressBookList?v=0';
+
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+
+      const json = await response.json();
+      const { items } = json.data.addressBookList;
+
+      let tableBody = '';
+      items.forEach((item) => {
+        tableBody += `<tr class="contacts-table__row">
+                        <td class="contacts-table__cell">
+                          <input type="checkbox" class="contacts-table__checkbox" />
+                        </td>
+                        <td class="contacts-table__cell contacts-table__cell--name">${item.contactPerson}</td>
+                        <td class="contacts-table__cell">${item.organisation}</td>
+                        <td class="contacts-table__cell">${item.address}</td>
+                        <td class="contacts-table__cell">
+                          <button class="contacts-table__menu-btn">
+                            <svg
+                              class="contacts-table__menu-icon"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="currentColor">
+                              <circle cx="12" cy="12" r="2"></circle>
+                              <circle cx="12" cy="5" r="2"></circle>
+                              <circle cx="12" cy="19" r="2"></circle>
+                            </svg>
+                          </button>
+                        </td>
+                      </tr>`;
+      });
+
+      block.querySelector('.contacts-table__body').innerHTML =
+        tableBody || EMPTY_ROW;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  getData();
+
   // * Mark block as loaded after all optimizations
   block.setAttribute('data-block-status', 'loaded');
 }
